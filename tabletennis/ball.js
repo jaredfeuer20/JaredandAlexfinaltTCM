@@ -18,16 +18,27 @@ class Ball {
         stroke(0);
         fill(0, 125, 255);
         ellipse(this.x, this.y, this.r*2);
-        x = x + move;
-        y = y + move;
-        if ((x > width) || (x <= 0)) {
-            move *= -1;
+        x = x + moveX;
+        y = y + moveY;
+        if ((x > width)) { //|| (x <= 0)) 
+            moveX *= -1;
         }
-        //if ((y > height) || (y <= 0)) {
-        //    move *= -1;
+        if ((y > height) || (y <= 0)) {
+            moveY *= -1;
+        }
+        //if ((this.x > 0 && this.x < 0 + 20) && (this.y + (this.r) >= mouseY)) {
+            //moveX *= -1;
+           // moveY *= -1;
+        //}
+
+        
+        //if ((this.x > 0 && this.x < 20) && ((this.y >= mouseY && this.y <=mouseY + 100)
+        //)) {
+          //  moveX *= -1;
+            //moveY *= -1;
+        
         //}
     }
-
 }
-console.log("hi jared");
+
     

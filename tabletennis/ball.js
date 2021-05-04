@@ -29,4 +29,5 @@ class Ball {
     }
 
 }
+console.log("hi alex");
     

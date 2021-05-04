@@ -29,5 +29,5 @@ class Ball {
     }
 
 }
-console.log("hi alex");
+console.log("hi jared");
     

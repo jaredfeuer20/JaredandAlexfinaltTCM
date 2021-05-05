@@ -3,12 +3,9 @@ var paddles;
 var paddles2;
 var x = 400;
 var y = 400;
-var moveX = 2;
-var moveY = 3;
-var paddlesHeight = 100;
-var paddlesWidth = 20;
-var paddlesX = 0;
-var paddlesY = mouseY;
+var moveX = 4;
+var moveY = 6;
+
 
 
 
@@ -32,14 +29,7 @@ paddles.display();
 paddles2.display();
 
 
-function keyPressed() {
-	if (keyCode === LEFT_ARROW) {
-	paddles2 -= 50;
-	}
-	else if (keyCode === RIGHT_ARROW) {
-		paddles2 += 50;
-	}
-}
+
 
 
 }

@@ -26,19 +26,16 @@ class Ball {
         if ((y > height) || (y <= 0)) {
             moveY *= -1;
         }
-        //if ((this.x > 0 && this.x < 0 + 20) && (this.y + (this.r) >= mouseY)) {
-            //moveX *= -1;
-           // moveY *= -1;
-        //}
-
-        
-        //if ((this.x > 0 && this.x < 20) && ((this.y >= mouseY && this.y <=mouseY + 100)
-        //)) {
-          //  moveX *= -1;
-            //moveY *= -1;
-        
-        //}
+       
+        if ((this.x < 20) && ((this.y > mouseY && this.y < mouseY + 100)
+        )) {
+            moveX *= -1;
+        }
     }
 }
 
     
+//if ((this.x > 0 && this.x < 0 + 20) && (this.y + (this.r) >= mouseY)) {
+            //moveX *= -1;
+           // moveY *= -1;
+        //}

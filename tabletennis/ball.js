@@ -14,7 +14,7 @@ class Ball {
     }
 
 
-    display() { // draw the catcher
+    display() { // draw the ball and make it bounce off paddles
         stroke(0);
         fill(0, 125, 255);
         ellipse(this.x, this.y, this.r*2);
@@ -26,17 +26,14 @@ class Ball {
         if ((y > height) || (y <= 0)) {
             moveY *= -1;
         }
-       // collison
+       // collison with left (user) paddle
         if ((this.x < 20) && ((this.y > mouseY && this.y < mouseY + 100)
         )) {
             moveX *= -1;
             x = x + Math.abs((this.x - 20)*2);
         }
     }
+  
 }
 
     
-//if ((this.x > 0 && this.x < 0 + 20) && (this.y + (this.r) >= mouseY)) {
-            //moveX *= -1;
-           // moveY *= -1;
-        //}

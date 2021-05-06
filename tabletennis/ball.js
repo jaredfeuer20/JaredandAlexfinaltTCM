@@ -26,10 +26,11 @@ class Ball {
         if ((y > height) || (y <= 0)) {
             moveY *= -1;
         }
-       
+       // collison
         if ((this.x < 20) && ((this.y > mouseY && this.y < mouseY + 100)
         )) {
             moveX *= -1;
+            x = x + Math.abs((this.x - 20)*2);
         }
     }
 }

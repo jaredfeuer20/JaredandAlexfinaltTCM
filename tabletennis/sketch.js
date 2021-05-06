@@ -5,6 +5,7 @@ var x = 400;
 var y = 400;
 var moveX = 4;
 var moveY = 6;
+var score = 0;
 
 
 
@@ -28,8 +29,8 @@ ball.display();
 paddles.display();
 paddles2.display();
 
+text(24);
+text("User Score:  " + int(score) + "  Computer Score:  " + int(score), 300, 50); // add score
 
-
-
-
+	
 }

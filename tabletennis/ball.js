@@ -29,6 +29,7 @@ class Ball {
         if ((this.y > height) || (this.y <= 0)) {
             this.moveY *= -1;
         }
+
        // collison with left (user) paddle
         if ((this.x < 20) && ((this.y > mouseY && this.y < mouseY + 100)
         )) {
@@ -43,10 +44,7 @@ class Ball {
         if (this.x - this.r > 800) {
             scoreuser += 1;
         }
-        
     }
-    
-  
 }
 
     

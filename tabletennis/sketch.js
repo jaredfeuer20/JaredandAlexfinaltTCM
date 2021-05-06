@@ -21,8 +21,6 @@ function myreset() {
 	ball.flipdirection();
 }
 
-
-
 function draw() {
 background(0);
 stroke(255);//color of line 
@@ -31,8 +29,6 @@ line(width/2 ,0,width/2,800);
 
 
 ball.display();
-
-
 paddles.display();
 paddles2.display();
 
@@ -40,9 +36,7 @@ if (ball.x < 0) {
 	myreset();
 }
 
-print(x," ", y);
 text(24);
 text("User Score:  " + int(scoreuser) + "  Computer Score:  " + int(scorecom), 300, 50); // add score
-	
 }
 

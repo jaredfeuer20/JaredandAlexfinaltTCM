@@ -23,6 +23,7 @@ class Ball {
         ellipse(this.x, this.y, this.r*2);
         this.x = this.x + this.moveX;
         this.y = this.y + this.moveY;
+        paddles2.display(this.y - 20);
         if ((this.x > width)) { //|| (this.x <= 0)) 
             this.moveX *= -1;
         }
@@ -31,7 +32,7 @@ class Ball {
         }
 
        // collison with left (user) paddle
-        if ((this.x < 20) && ((this.y > mouseY && this.y < mouseY + 100)
+        if ((this.x < 20 && this.x < 0) && ((this.y > mouseY && this.y < mouseY + 100)
         )) {
             this.moveX *= -1;
             this.x = this.x + Math.abs((this.x - 20)*2); // to make the ball actually come off paddle

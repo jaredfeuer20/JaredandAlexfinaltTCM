@@ -3,7 +3,7 @@ class Ball {
         this.r =radius;
         this.x = 0;
         this.y = 0;
-        this.speed = 10;
+        this.speed = 20;
         this.moveX = mx;
         this.moveY = my;
     }
@@ -17,14 +17,13 @@ class Ball {
         this.y = newY;
     }
 
-    display() 
+    display(computerY) 
     { // draw the ball and make it bounce off paddles
         stroke(0);
         fill(0, 125, 255);
         ellipse(this.x, this.y, this.r*2);
         this.x = this.x + this.moveX;
         this.y = this.y + this.moveY;
-        paddles2.display(this.y - 20);
         
         if (this.y > height) // y above screen
         {
@@ -44,11 +43,17 @@ class Ball {
             {
                 this.moveX *= -1;
                 this.x = this.x + Math.abs((this.x - 20)*2); // to make the ball actually come off paddles
+                return true;
             }
             else  
             {
                 scorecom += 1;
-                myreset();
+                if (scorecom <= int(2)) {
+                    myreset(); 
+                }
+                else {
+                    endGame();
+                }
             }
             
         }
@@ -56,9 +61,24 @@ class Ball {
         // collision with right (computer) paddle
         if (this.x > 780)
         {
-            this.moveX *= -1;
-            this.x = this.x - Math.abs((this.x - 780)*2); // to make the ball actually come off paddles2
-        } 
+            if(this.y > computerY && this.y < computerY + 100)
+            {
+                this.moveX *= -1;
+                this.x = this.x - Math.abs((this.x - 780)*2);// to make the ball actually come off paddles2
+                return true;
+            }
+            else
+            {
+                scoreuser += 1;
+                if (scoreuser <= int(2)) {
+                    myreset(); 
+                }
+                else {
+                    endGame();
+                }
+            }
+        }
+        return false;     
     }
 }
 

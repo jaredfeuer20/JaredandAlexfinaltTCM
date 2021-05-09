@@ -1,6 +1,6 @@
 class Paddles2 {
     constructor() {
-        this.y = 0;
+        this.y = 400;
         this.moveY = 0;
         this.speed = 6;
     }

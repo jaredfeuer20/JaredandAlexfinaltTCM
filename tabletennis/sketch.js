@@ -18,6 +18,8 @@ function setup() { // this sets up the screen (at beginnig) and after game start
 	paddles2 = new Paddles2(15);
 	ball.setLocation(x, y); // set ball up in middle
 	textSize(20);
+	scoreuser = 0;
+	scorecom = 0;
 }
 
 function myreset() { // resets the ball in the center of the screen (400, 400) when the game starts and when the ball goes out of play
@@ -30,9 +32,8 @@ function myreset() { // resets the ball in the center of the screen (400, 400) w
 function draw() { // sets up screen depending on game start menu and for playing game
 	clear();
 	if (mode==0) {
-		text("Welcome to Ping Pong.",50,300);
-		text("Press 'c' to play against the computer", 50, 350);
-		text("Press 'p' to play against another player", 50,400);
+		text("Welcome to Ping Pong.",50,100);
+		text("Press 'c' to start the game", 50, 150);
 	}
 	if (mode==1) {
 		background(0);
@@ -46,6 +47,7 @@ function draw() { // sets up screen depending on game start menu and for playing
 
 		if (hitPaddle) {
 			counter++;
+			ball.moveX = ball.moveX * 1.05;
 		}
 		if (counter >= 5) {
 			paddles2.display(ball.y + 20);
@@ -54,35 +56,41 @@ function draw() { // sets up screen depending on game start menu and for playing
 			paddles2.display(ball.y - 20);
 		}
 		
-
-
 		text(24);
 		text("User Score:  " + int(scoreuser) + "  Computer Score:  " + int(scorecom), 250, 50); // add score
-
 
 	}
 	if (mode==3) { // you win
 		clear();
 		text("Game Over. Congratulations on Victory!", 100,100);
+		text("Press 'd' to play again.", 100, 150);
+		if (keyCode===68){
+			setup();
+		}
 	}
 	if (mode==4) { // you lose
 		clear();
 		text("Game Over. You Lost.", 100,100);
+		text("Press 'd' to play again.", 100, 150);
+		if (keyCode===68){
+			setup();
+		}
 	}
 }
 
 function keyPressed() { // selecting play against computer
 	if (keyCode===67) {
 		mode=1;
+		keyCode = 0;
 	}
 }
 
 function endGame() { // ending the game
-	if (scoreuser >= int(2)) {
+	if (scoreuser >= int(6)) {
 		mode=3;
 	}
-	if (scorecom >= int(2)) {
-			mode=4;
+	if (scorecom >= int(6)) {
+		mode=4;
 	}
 
 }

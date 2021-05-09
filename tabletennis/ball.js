@@ -48,7 +48,7 @@ class Ball {
             else  
             {
                 scorecom += 1; // computer scores point
-                if (scorecom <= int(2)) {
+                if (scorecom <= int(6)) {
                     myreset(); 
                 }
                 else {
@@ -70,7 +70,7 @@ class Ball {
             else
             {
                 scoreuser += 1; // user scores point
-                if (scoreuser <= int(2)) {
+                if (scoreuser <= int(6)) {
                     myreset(); 
                 }
                 else {

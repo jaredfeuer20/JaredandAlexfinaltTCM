@@ -10,7 +10,7 @@ var computery = 0;
 var mode;
 var counter = 0;
 
-function setup() {
+function setup() { // this sets up the screen (at beginnig) and after game starts
 	mode = 0;
 	createCanvas(800, 800);
 	ball = new Ball(15, 6, 4);
@@ -20,14 +20,14 @@ function setup() {
 	textSize(20);
 }
 
-function myreset() {
+function myreset() { // resets the ball in the center of the screen (400, 400) when the game starts and when the ball goes out of play
 	setTimeout(ball.setLocation(x, y), 30000); // set ball up in middle
 	this.resetcounter ++;
 	ball.flipdirection();
 	counter = 0;
 }
 
-function draw() {
+function draw() { // sets up screen depending on game start menu and for playing game
 	clear();
 	if (mode==0) {
 		text("Welcome to Ping Pong.",50,300);
@@ -61,23 +61,23 @@ function draw() {
 
 
 	}
-	if (mode==3) {
+	if (mode==3) { // you win
 		clear();
 		text("Game Over. Congratulations on Victory!", 100,100);
 	}
-	if (mode==4) {
+	if (mode==4) { // you lose
 		clear();
 		text("Game Over. You Lost.", 100,100);
 	}
 }
 
-function keyPressed() {
+function keyPressed() { // selecting play against computer
 	if (keyCode===67) {
 		mode=1;
 	}
 }
 
-function endGame() {
+function endGame() { // ending the game
 	if (scoreuser >= int(2)) {
 		mode=3;
 	}

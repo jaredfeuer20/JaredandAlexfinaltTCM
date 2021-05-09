@@ -9,7 +9,7 @@ class Paddles2 {
         return Math.min(Math.max(x, a), b);
     }
 
-    display(destinationy) 
+    display(destinationy) // computer paddle tracking ball
     {
         if (this.y > destinationy)
         {
